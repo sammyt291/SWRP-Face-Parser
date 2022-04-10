@@ -25,7 +25,7 @@
 
 	      let instructions = [];
 
-	      instructions[#instructions+1] = "Start Face: " + dirs[dir];
+	      instructions[instructions.length+1] = "Start Face: " + dirs[dir];
 
 	      for(k in preParts){
 		let v = preParts[k]
@@ -34,7 +34,7 @@
 		  case "F":
 		    dir = 0;
 		    count++;
-		    instructions[#instructions+1] = count + " " + dirs[dir];
+		    instructions[instructions.length+1] = count + " " + dirs[dir];
 		  break;
 		  case "R":
 		    dir++
@@ -42,7 +42,7 @@
 		    if(dir > 3){
 		      dir = 0;
 		    }
-		    instructions[#instructions+1] = count + " " + dirs[dir];
+		    instructions[instructions.length+1] = count + " " + dirs[dir];
 		  break;
 		  case "L":
 		    dir--
@@ -50,7 +50,7 @@
 		    if(dir < 0){
 		      dir = 3;
 		    }
-		    instructions[#instructions+1] = count + " " + dirs[dir];
+		    instructions[instructions.length+1] = count + " " + dirs[dir];
 		  break;
 		  case "A":
 		    let curFace = dirs[dir];
@@ -59,13 +59,13 @@
 		    //console.log("about", about);
 		    dir = about;
 		    count++;
-		    instructions[#instructions+1] = count + " " + dirs[dir];
+		    instructions[instructions.length+1] = count + " " + dirs[dir];
 		  break;
 		}
 
 	      } //Main Loop
 
-	      instructions[#instructions+1] = "End Face: " + dirs[dir];
+	      instructions[instructions.length+1] = "End Face: " + dirs[dir];
 
 	      return instructions;
       }
