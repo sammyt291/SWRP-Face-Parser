@@ -6,13 +6,15 @@
 	  
     <label for="input">Ask: </label>
     <input type="text" id="input" name="input" style="width:100%; "></input>
+	
+    <br>
     
     <select name="Instructions" id="list" size="60"></select>
     
     <script>
       let findface = function( inp, dir = 0 ){
 
-	      let dirs = [ "F", "R", "L", "B" ];
+	      let dirs = [ "F", "R", "B", "L" ];
 	      let aboutFaceLookup = {
 		"F": 3,
 		"B": 0,
@@ -71,6 +73,7 @@
       }
       
       $("#input").change(function() {
+	$("#list").empty();
         let set = findface($("#input").val());
         for(k in set){
           let v = set[k];
