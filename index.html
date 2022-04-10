@@ -3,6 +3,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   </head>
   <body>
+	  
+    <label for="input">Ask: </label>
+    <input type="text" id="input" name="input" style="width:100%; "/>
+    
+    <select name="Instructions" id="list" size="30"/>
+    
     <script>
       let findface = function( inp, dir = 0 ){
 
@@ -62,15 +68,8 @@
       instructions[#instructions+1] = "End Face: " + dirs[dir];
 
       return instructions;
-	  }
-    </script>
-    
-    <label for="input">Ask: </label>
-    <input type="text" id="input" name="input" style="width:100%; "/>
-    
-    <select name="Instructions" id="list" size="30"/>
-    
-    <script>
+      }
+      
       $("#input").change(function() {
         let set = findface($("#input").val());
         for(k in set){
